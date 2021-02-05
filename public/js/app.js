@@ -1,0 +1,1 @@
+alert("bbbbbb"),alert("aaaa");
