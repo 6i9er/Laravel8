@@ -15,11 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(
     
-//     [
-//     'prefix' => '{locale}', 
-//     'where' => ['locale' => 'en|ar']
-//     // 'where' => ['locale' => '[a-zA-Z]{2}']
-//   ],
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
@@ -33,6 +28,7 @@ Route::group(
         // return Auth::user();
         // return app()->getLocale();
         // return Uuid::generate()->string;
+        return view('livewire');
         return view('welcome');
     });
 

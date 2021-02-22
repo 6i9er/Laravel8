@@ -132,7 +132,6 @@
         <!-- if you want to use laravel Mix by compining the js and css files to only one file -->
         <script src="{{ url(mix('/js/app.js')) }}"></script>
         <!-- if you want to use normal Files -->
-        <script  src="{{ url('js/scripts.js') }}" type="text/javascript"></script>
-        <script  src="{{ url('js/scripts1.js') }}" type="text/javascript"></script> 
+        <!-- <script  src="{{ url('js/scripts1.js') }}" type="text/javascript"></script>  -->
     </body>
 </html>

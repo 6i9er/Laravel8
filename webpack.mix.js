@@ -13,6 +13,5 @@ const mix = require('laravel-mix');
 
 mix.scripts([
     'public/js/scripts.js',
-    'public/js/scripts1.js',
 ], 'public/js/app.js').version();
 
