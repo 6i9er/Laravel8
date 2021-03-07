@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +27,9 @@ Route::group(
         // return Auth::user();
         // return app()->getLocale();
         // return Uuid::generate()->string;
-        return view('livewire');
+
+        
+        return view('livewire' );
         return view('welcome');
     });
 
