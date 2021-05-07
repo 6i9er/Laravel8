@@ -19,19 +19,26 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ],
   function() {
-    Route::get('/', function () {
-        // App::setLocale('ar');
-        // app()->setLocale('ar');
-        // Auth::loginUsingId(1);
-        // Auth::logout();
-        // return Auth::user();
-        // return app()->getLocale();
-        // return Uuid::generate()->string;
+    /** Workign with livewire */
+    Route::get('/', \App\Http\Livewire\Home::class)->name('home');
 
-        
-        return view('livewire' );
-        return view('welcome');
+    Route::group(['middleware'=>'guest'] , function(){
+        Route::get('/login', \App\Http\Livewire\Login::class)->name('login');
+       Route::get('/register', \App\Http\Livewire\Register::class);
     });
+    
+    Route::get('/logout', \App\Http\Livewire\Logout::class);
+    // Route::get('/comments', \App\Http\Livewire\Comments::class);
+    
+    /** End working with livewire */
+
+
+
+
+    // Route::get('/', function () {
+    //     return view('livewire' );
+    //     return view('welcome');
+    // });
 
 
     Route::get('/andrew', function () {
@@ -44,17 +51,3 @@ Route::group(
 
 
 });
-
-// Route::get('/', function () {
-//     // app()->setLocale('ar');
-//     return app()->getLocale();
-//     return view('welcome');
-// });
-
-// Route::get('/andrew', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/main', function () {
-//     return view('welcome');
-// });
